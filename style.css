@@ -1,0 +1,183 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #334155);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    color: #e2e8f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Floating Gradient Animation */
+@keyframes gradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Floating Shapes */
+.floating-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.floating-shapes div {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #0ea5e9, #38bdf8);
+    opacity: 0.3;
+    filter: blur(50px);
+}
+
+.floating-shapes div:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    top: -150px;
+    left: -150px;
+    animation: float 15s ease-in-out infinite;
+}
+
+.floating-shapes div:nth-child(2) {
+    width: 200px;
+    height: 200px;
+    bottom: 100px;
+    right: -100px;
+    animation: float 12s ease-in-out infinite reverse;
+}
+
+.floating-shapes div:nth-child(3) {
+    width: 150px;
+    height: 150px;
+    bottom: -50px;
+    left: 20%;
+    animation: float 18s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Glass Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 20px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+/* Hero Section */
+.hexagon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typewriter h1 {
+    overflow: hidden;
+    border-right: .15em solid #0ea5e9;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #0ea5e9; }
+}
+
+/* Skills Progress Bars */
+.skill-progress {
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #334155;
+}
+
+.skill-progress div {
+    height: 100%;
+    background: #0ea5e9;
+}
+
+/* Project Cards */
+.project-card {
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #333;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 30px;
+}

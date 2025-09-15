@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oscar IRADUKUNDA Portfolio</title>
+  <base target="_self">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1'
+            },
+            dark: {
+              900: '#0f172a',
+              800: '#1e293b',
+              700: '#334155'
+            }
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'gradient': 'gradient 15s ease infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            gradient: {
+              '0%, 100%': { backgroundPosition: '0% 50%' },
+              '50%': { backgroundPosition: '100% 50%' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(-45deg, #0f172a, #1e293b, #334155);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      color: #e2e8f0;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+    .typewriter h1 {
+      overflow: hidden;
+      border-right: .15em solid #0ea5e9;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .15em;
+      animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    }
+    @keyframes typing { from { width: 0 } to { width: 100% } }
+    @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #0ea5e9 } }
+    .floating-shapes { position: absolute; width: 100%; height: 100%; overflow: hidden; top: 0; left: 0; z-index: -1; }
+    .floating-shapes div { position: absolute; border-radius: 50%; background: linear-gradient(45deg, #0ea5e9, #38bdf8); opacity: 0.3; filter: blur(50px); }
+    .floating-shapes div:nth-child(1) { width: 300px; height: 300px; top: -150px; left: -150px; animation: float 15s ease-in-out infinite; }
+    .floating-shapes div:nth-child(2) { width: 200px; height: 200px; bottom: 100px; right: -100px; animation: float 12s ease-in-out infinite reverse; }
+    .floating-shapes div:nth-child(3) { width: 150px; height: 150px; bottom: -50px; left: 20%; animation: float 18s ease-in-out infinite; }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <div class="floating-shapes">
+    <div></div><div></div><div></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="glass-card fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-11/12 max-w-4xl">
+    <div class="flex justify-between items-center px-6 py-3">
+      <a href="#" class="text-2xl font-bold text-primary-400">Oscar</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="#about" class="hover:text-primary-400">About</a>
+        <a href="#skills" class="hover:text-primary-400">Skills</a>
+        <a href="#projects" class="hover:text-primary-400">Projects</a>
+        <a href="#contact" class="hover:text-primary-400">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center px-4 pt-16">
+    <div class="text-center max-w-4xl mx-auto">
+      
+      <div class="typewriter mb-6">
+        <h1 class="text-4xl md:text-6xl font-bold">Software Developer</h1>
+      </div>
+      <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
+        Passionate about building creative and practical solutions with Java, SQL, HTML, CSS, and JavaScript.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#projects" class="glass-card px-8 py-3 rounded-lg font-medium hover:bg-primary-500">View Projects</a>
+        <a href="#contact" class="glass-card px-8 py-3 rounded-lg font-medium border border-primary-500 hover:bg-primary-500">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-16">About Me</h2>
+      <div class="glass-card p-8 md:p-12">
+        <p>
+          I am a motivated developer with strong skills in backend (Java, PL/SQL) and frontend (HTML, CSS, JavaScript). 
+          I enjoy solving problems and designing projects that are both functional and user-friendly. 
+          I’m capable of working independently and continuously learning new technologies to improve my craft.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-20 px-4 bg-dark-800">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-16">Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="glass-card p-6 text-center">Java</div>
+        <div class="glass-card p-6 text-center">PL/SQL</div>
+        <div class="glass-card p-6 text-center">HTML</div>
+        <div class="glass-card p-6 text-center">CSS</div>
+        <div class="glass-card p-6 text-center">JavaScript</div>
+        <div class="glass-card p-6 text-center">Database Design</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-16">Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="project-card glass-card p-6">
+          <h3 class="text-xl font-semibold mb-2">Red Planet Registry (Java Desktop App)</h3>
+          <p>A Java application to manage records for a futuristic Mars colony, including crew members and units. Focused on clean interface and data management.</p>
+        </div>
+        <div class="project-card glass-card p-6">
+          <h3 class="text-xl font-semibold mb-2">PoliceMS_DB (PL/SQL Project)</h3>
+          <p>A PL/SQL-based police management system handling officers, cases, and reporting with procedures, transactions, and auditing for integrity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 px-4 bg-dark-800">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-16">Get In Touch</h2>
+      <div class="glass-card p-8">
+        <form class="space-y-6">
+          <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-dark-700 rounded-lg focus:ring-2 focus:ring-primary-500">
+          <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-dark-700 rounded-lg focus:ring-2 focus:ring-primary-500">
+          <textarea rows="4" placeholder="Your Message" class="w-full px-4 py-3 bg-dark-700 rounded-lg focus:ring-2 focus:ring-primary-500"></textarea>
+          <button type="submit" class="w-full bg-primary-500 py-3 rounded-lg font-medium hover:bg-primary-600">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-4 text-center text-gray-400">
+    <p>© 2025 Oscar IRADUKUNDA. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you! I will get back to you soon.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
